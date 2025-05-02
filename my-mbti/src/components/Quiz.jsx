@@ -42,7 +42,7 @@ export default function Quiz() {
                 key={c.label}
                 variant="primary"
                 size="sm"
-                className="bg-dark bg-opacity-25 border-0 text-white"
+                className="bg-dark bg-opacity-75 border-0 text-white"
                 onClick={() => handleChoice(c)}
               >
                 {c.label}

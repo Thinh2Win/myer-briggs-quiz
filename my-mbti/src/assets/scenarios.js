@@ -241,7 +241,7 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
   startF3: {
     id: 'startF3',
     bg: '/secondDichotomy/secondC/choiceC.png',
-    text: "You dive into the Rainbow Abyss clutching your feather-staff tightly between your teeth, following your cat-dragon instincts to hunt down the legendary Yarn of Fate and the string that was severed representing your past life",
+    text: "You found a book. There was a book this whole time ._.",
     choices: [
       { label: "continue", next: 'thirdDichotomy', score: 0},
     ]
@@ -253,7 +253,7 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
     bg: '/secondDichotomy/kitty_stats.png',
     text: "You blink and find yourself in the Chamber of Heart and Claw! A grand hall where paw-shaped gavel statues guard a glowing ruby heart",
     choices: [
-      { label: "continue", next: 'start2', score: 0},
+      { label: "continue", next: 'fourthDichotomy', score: 0},
     ]
   },
   start3: {
@@ -267,10 +267,127 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
       
     ]
   },
+  
+     /* <-------------------------------- 4th Dichotomy --------------------------------> */
+     fourthDichotomy: {
+      id: 'fourthDichotomy',
+      bg: '/fourthDichotomy/4Start.png',
+      text: "You blink and find yourself in the Garden of Shifting Paths! Winding hedges that form ever-changing walkways under floating lanterns. Your first instinct is to",
+      choices: [
+        { label: "Meticulously mark each turn with a glowing paw print, ensuring you'll never get lost in this maze", next: 'startJ', score: 1},
+        { label: "Observe. You notice the lantern spirits follow patterns and create a timetable for their movements, organizing them by color and brightness the same way you arrange your Omeowkase set", next: 'startK', score: 2},
+        { label: "Abandon any notion of finding the exit, instead choosing to leap joyfully from lantern to lantern, making friends with each spirit you meet and learning their stories and embracing the journey", next: 'startL', score: 3},
+      ]
+    },
+    startJ: {
+      id: 'startJ',
+      bg: '/fourthDichotomy/4A.png',
+      text: "As you continue to wander the maze, you grow tired of the brute force approach and instead decide to",
+      choices: [
+        { label: "Just stick with the plan", next: 'startJ1', score: 1},
+        { label: "Charm a playful lantern spirit", next: 'startJ2', score: 2},
+        { label: "Abandon any fixed path entirely, choosing to follow your instincts", next: 'startJ3', score: 3},
+        
+      ]
+    },
+    startJ1: {
+      id: 'startJ1',
+      bg: '/fourthDichotomy/fourthA/choiceA.png',
+      text: "You carefully sketch a detailed map of the labyrinth on a magical leaf, continuing to always stick left to avoid taking duplicate paths",
+      choices: [
+        { label: "continue", next: 'end', score: 0},
+      ]
+    },
+    startJ2: {
+      id: 'startJ1',
+      bg: '/fourthDichotomy/fourthA/choiceB.png',
+      text: "You convince a lantern spirit into becoming your companion through the labyrinth, letting it lead you on unexpected detours that might reveal hidden treasures and eventually the exit",
+      choices: [
+        { label: "continue", next: 'end', score: 0},
+      ]
+    },
+    startJ3: {
+      id: 'startJ1',
+      bg: '/fourthDichotomy/fourthA/choiceC.png',
+      text: "You choose instead to leap joyfully from light to light, letting each new encounter determine your next move",
+      choices: [
+        { label: "continue", next: 'end', score: 0},
+      ]
+    },
+    startK: {
+      id: 'startK',
+      bg: '/fourthDichotomy/4B.png',
+      text: "It seems some lanterns are sporadic and seem to be tricking you; almost attempting to outsmart you. Changing your strategy you decide to",
+      choices: [
+        { label: "Document each lantern spirit's behavior on a magical leaf scroll to find which are trustworthy", next: 'startK1', score: 1},
+        { label: "Use your sensitive whiskers to feel the subtle energy changes as lanterns float by", next: 'startK2', score: 2},
+        { label: "Abandon all plans and go with you gut feeling", next: 'startK3', score: 3},
+        
+      ]
+    },
+    startK1: {
+      id: 'startK1',
+      bg: '/fourthDichotomy/fourthB/choiceA.png',
+      text: "Using your keen senses you notice the slightest tells for which spirits are trying to trick you and which are helping you. When you are 100% certain you follow the correct spirit out the labyrinth  ",
+      choices: [
+        { label: "continue", next: 'end', score: 0},
+      ]
+    },
+    startK2: {
+      id: 'startK1',
+      bg: '/fourthDichotomy/fourthB/choiceB.png',
+      text: "You make a mental note of each feeling. Gathering information and following spirits that give the most pleasant sensations, you find hidden pathways that lead you out the labyrinth",
+      choices: [
+        { label: "continue", next: 'end', score: 0},
+      ]
+    },
+    startK3: {
+      id: 'startK1',
+      bg: '/fourthDichotomy/fourthB/choiceC.png',
+      text: "You simply follow whatever glowing spirit catches your fancy at the moment, trusting your new found instincts to guide you through the labyrinth",
+      choices: [
+        { label: "continue", next: 'end', score: 0},
+      ]
+    },
+    startL: {
+      id: 'startL',
+      bg: '/fourthDichotomy/4C.png',
+      text: "After a 2 year time skip within the Garden of Shifting Paths, you wave good bye to the spirits you have grown so fond of and recall the events that led you here",
+      choices: [
+        { label: "You arrange selected spirits in a circle and conduct a formal tea ceremony serving spectral dimsum every day", next: 'startL1', score: 1},
+        { label: "Your competitive nature lead you to having fun competitions with spirits, going head to head on a day to day basis", next: 'startL2', score: 2},
+        { label: "You continue leaping from lantern to lantern with no particular destination, letting each spirit's story inspire your next move as flowers bloom beneath your paws", next: 'startL3', score: 3},
+        
+      ]
+    },
+    startL1: {
+      id: 'startL1',
+      bg: '/fourthDichotomy/fourthC/choiceA.png',
+      text: "As you coexist with the spirits you subconsciously learn the rules and behaviors of the labyrinth itself. There is a specific window you can leave but until then, you choose to enjoy your time with the spirits",
+      choices: [
+        { label: "continue", next: 'end', score: 0},
+      ]
+    },
+    startL2: {
+      id: 'startL2',
+      bg: '/fourthDichotomy/fourthC/choiceB.png',
+      text: "As you continue winning you continuously level up, eventually becoming recognized and respected by the spirits and the labyrinth itself",
+      choices: [
+        { label: "continue", next: 'end', score: 0},
+      ]
+    },
+    startL3: {
+      id: 'startL3',
+      bg: '/fourthDichotomy/fourthC/choiceC.png',
+      text: "Continuing to embrace the journey and win over the spirits has allowed you to know the location of the exit, you now choose when you wish to leave and not the labyrinth",
+      choices: [
+        { label: "continue", next: 'end', score: 0},
+      ]
+    },
   end: {
     id: 'end',
     text: "You’ve answered all questions! Here’s your type…",
-    choices: []  // empty signals “game over”
+    choices: [{label: "continue", next: 'thirdDichotomy', score: 0}]  // empty signals “game over”
   }
 }
   

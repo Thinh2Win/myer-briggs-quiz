@@ -2,10 +2,18 @@ import { useState } from 'react';
 import { Container, Row, Col, Button, Card, ProgressBar } from 'react-bootstrap';
 import {scenarios} from '../assets/scenarios';
 
-export default function Quiz() {
+export default function Quiz({setCurrentPage, setScore}) {
     const [node, setNode] = useState(scenarios['start']);
 
     const handleChoice = (choice) => {
+      if (choice.id === 'end') return setCurrentPage('end');
+      if (choice.score > 0) {
+        setScore(prev => {
+          const newScore = [...prev];
+          newScore[node.dichotomy] += choice.score;
+          return newScore;
+        });
+      }
       setNode(scenarios[choice.next]);
     }
 
@@ -19,6 +27,7 @@ export default function Quiz() {
           backgroundSize:   'contain',
           backgroundPosition: 'center',
           backgroundRepeat:  'no-repeat',
+          overflow: 'hidden',
         }}
       >
         {/* TOP ROW: your question text */}

@@ -1,0 +1,4 @@
+.jrpg-screen { background: #123; font-family: 'Press Start 2P', monospace; }
+.jrpg-panel { background: #222; border: 2px solid #e4c21a; border-radius: 4px; }
+.jrpg-panel-header { font-family: inherit; }
+.fact-panel, .fact-title { color: #ffd700; }

@@ -1,15 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import StartContainer from './components/StartPage';
 import Quiz from './components/Quiz';
 import ResultPage from './components/ResultPage';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('end');
+  const [currentPage, setCurrentPage] = useState('start');
   const [score, setScore] = useState([0, 0, 0, 0]);
-
-  useEffect(() => {
-    console.log(score);
-  }, [score]);
 
   return (
     <>

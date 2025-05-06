@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container, Row, Col, Button, Card, ProgressBar } from 'react-bootstrap';
+import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import {scenarios} from '../assets/scenarios';
 
 export default function Quiz({setCurrentPage, setScore}) {

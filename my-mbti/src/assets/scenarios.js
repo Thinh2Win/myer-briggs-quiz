@@ -498,7 +498,7 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
     id: 'end',
     bg: '/fourthDichotomy/evoKitty.png',
     text: "You have reached the end of your grind! You have evolved into",
-    choices: [{label: "continue", next: '', score: 0}] 
+    choices: [{label: "continue", next: '', score: 0, id: 'end'}] 
   }
 }
   

@@ -55,7 +55,7 @@ export const personalities = {
     },
     INFJ: {
         mybp: 'INFJ',
-        title: 'The Sage',
+        title: 'The Wise Sage',
         spriteUrl: '/sprites/INFJ.png',
         compatible: ['ENFP', 'ENTP', 'INTJ'],
         incompatible: ['ESTP', 'ESFP', 'ISTP'],
@@ -102,9 +102,8 @@ export const personalities = {
         race: 'Orange Tabby cat',
         job: 'Adventurer',
         desc: `Orange Tabby cats are playful, affectionate, and into everything at once.
-        As the Campaigner you are a free spirit brimming with creativity and 
-        warmth as every day is an adventure and every stranger a potential friend. 
-        You click with people who share your curiosity and zest but clash against overly strict or routine-bound folks.`,
+        As the Campaigner you are a free spirit brimming with creativity as every day is an adventure and every stranger a potential friend. 
+        You click with people who share your curiosity and zest but clash against strict, routine-bound folks.`,
         stats: ['Charisma: 90', 'Dexterity: 75', 'Luck: 85', 'Wisdom: 78'],
     },
     ISTJ: {
@@ -117,7 +116,6 @@ export const personalities = {
         job: 'Stalwart Knight',
         desc: `British Shorthair cats are reserved, dignified, and no-nonsense, preferring routine and comfy order. 
         As the Inspector you are hard-working and dutiful, valuing tradition, facts, and a well-organized plan. 
-        People tend to count on you to be the responsible and detail-oriented one. 
         You bond with others who prove reliable and respectful and clash with those who are erratic or careless.`,
         stats: ['Defense: 95', 'Intelligence: 80', 'Constitution: 90', 'Accuracy: 88'],
     },
@@ -130,8 +128,8 @@ export const personalities = {
         race: 'Ragdoll cat',
         job: 'White Mage',
         desc: `Ragdoll cats are gentle, affectionate, and happiest in the comfort of home and family.
-        As the Guardian Angel you are a nurturing caregiver with incredible empathy and a strong sense of responsibility to your loved ones.
-        You tend to avoid arguments and prefer to maintain harmony and peace, thriving around those who appreciate your warmth 
+        As the Guardian Angel you are a nurturing caregiver with a strong sense of responsibility.
+        You tend to avoid arguments opting for harmony, prefering those who appreciate your warmth 
         and clashing with abrasive or overly analytical types.`,
         stats: ['Constitution: 85', 'Intelligence: 90', 'Wisdom: 78', 'Charisma: 75'],
     },
@@ -150,16 +148,15 @@ export const personalities = {
     },
     ESFJ: {
         mybp: 'ESFJ',
-        title: 'The Consul',
+        title: 'The Consultant',
         spriteUrl: '/sprites/ESFJ.png',
         compatible: ['ISFJ', 'ESTJ', 'ENFJ'],
         incompatible: ['INTP', 'INTJ', 'ENTP'],
         race: 'Birman cat',
         job: 'Cleric',
-        desc: `Birman cats are loving, people-oriented, and always underfoot seeking affection or supervising the household.
-        As the Consul you are a sociable caretaker who excels at creating comfort and shouldering burdens. 
-        You are the friend who remembers everyone’s birthday and brings the group together, bonding well with people who value your warmth and dependability
-        and clash with detached, overly sarcastic types`,
+        desc: `Birman cats are loving, people-oriented, and always underfoot seeking affection.
+        As the Consultant you are a sociable caretaker who excels at creating comfort and shouldering burdens. 
+        You are the friend who remembers everyone’s birthday and ralleys the group, often clashing with detached, overly sarcastic types.`,
         stats: ['Charisma: 92', 'Defense: 85', 'Wisdom: 78', 'Hit Points: 80'],
     },
     ISTP: {
@@ -171,8 +168,8 @@ export const personalities = {
         race: 'Feral Alley cat',
         job: 'Rogue',
         desc: `Feral Alley cats are independent, stealthy, and street-smart, prowling solo and answering to no one.
-        As the Virtuoso you are a cool-headed troubleshooter and adventure lover who moves through life with a lockpick set in hand and a daredevil twinkle in your eye. 
-        You jive with those who respect independence and practical skills and clash with anyone who micromanages or brings needless drama.`,
+        As the Virtuoso you are a cool-headed troubleshooter and adventure lover who moves through life with a daredevil twinkle in your eye. 
+        You jive with those who respect independence and clash with micromanagers or drama bringers.`,
         stats: ['Dex: 92', 'Intelligence: 78', 'Initiative: 80', 'Crit Rate: 99'],
     },
     ISFP: {
@@ -183,9 +180,9 @@ export const personalities = {
         incompatible: ['ENTJ', 'ESTJ', 'ENFJ'],
         race: 'Calico cat',
         job: 'Ranger',
-        desc: `Calico cats are quietly independent with a unique style, affectionate on their own terms and a bit elusive when they want to be.
-        As a Lone Wanderer you are daringly creative as you live in the moment, sneaking off to paint the sunset or help a lost creature in the middle of the journey.
-        You befriend those who encourage your free-spirited artistry but clash against controlling or critical personalities.`,
+        desc: `Calico cats are independent with a unique style, affectionate on their own terms and a bit elusive when they want to be.
+        As a Lone Wanderer you are daringly creative as you live in the moment, sneaking off to paint the sunset.
+        You befriend those who encourage your free-spirited artistry but clash against controlling personalities.`,
         stats: ['Dexterity: 90', 'Wisdom: 80', 'Luck: 85', 'Charisma: 78'],
     },
     ESTP: {
@@ -197,7 +194,7 @@ export const personalities = {
         race: 'Spotted Bengal cat',
         job: 'Barbarian',
         desc: `Spotted Bengal cats are athletic, curious, and a little wild, likely to knock things over in pursuit of fun.
-        As the Dyanmo you are bold, direct, and always ready for action as you prefer to leap into the fray vs sitting around planning.
+        As the Dyanmo you are bold, direct, and always ready for action, prefering to leap into the fray vs plan.
         You vibe with fellow thrill-seekers and straight-shooters and clash with cautious or overly introspective types.`,
         stats: ['Dexterity: 92', 'Initiative: 99', 'Strength: 85', 'Crit Rate: 88'],
     },
@@ -210,8 +207,8 @@ export const personalities = {
         race: 'Siamese-mix cat',
         job: 'Bard',
         desc: `Siamese-mix cats or “party cats” are affectionate, loud, and the center of attention knocking stuff off your desk just because.
-        As the Entertainer you live to spread joy as a vivacious performer. You are the friend who turns life into a party wherever they go 
-        getting along effortlessly with people who share your energy and clash with those who dampen the mood or demand solitude.`,
+        As the Entertainer you live to spread joy as a vivacious performer who turns life into a party wherever they go. 
+        You bond with people who share your energy and clash with those who dampen the mood.`,
         stats: ['Charisma: 90', 'Intelligence: 90', 'Luck: 75', 'Crit Rate: 80'],
     },
 }

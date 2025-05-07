@@ -378,7 +378,7 @@ Like, like, like JENNIE`,
   fourthDichotomy: {
     id: 'fourthDichotomy',
     bg: '/fourthDichotomy/4Start.png',
-    text: "You blink and find yourself in the Garden of Shifting Paths! Winding hedges that form ever-changing walkways under floating lanterns. Your first instinct is to",
+    text: "You blink and find yourself within the last trial, the Garden of Shifting Paths! Your first instinct is to",
     dichotomy: 3,
     choices: [
       { label: "Mark each turn with a glowing paw print, ensuring you'll never get lost", next: 'startJ', score: 1},

@@ -17,7 +17,7 @@ export default function StartPage({setCurrentPage}) {
       >
         {/* Title Panel */}
         <Row className="jrpg-row mb-3 w-100 justify-content-center mt-4">
-          <Col xs={10} md={8} lg={6}>
+          <Col xs={10} md={8} lg={4}>
             <Card className="jrpg-panel title-panel">
               <Card.Body className="jrpg-panel-body text-center">
                 <Card.Title className="monospace mb-0 text-white">Reincarnated As A Jobless Kitty Cat In Another World?</Card.Title>                

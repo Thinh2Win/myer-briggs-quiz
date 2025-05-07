@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import {scenarios} from '../assets/scenarios';
+import { scenarios } from '../assets/scenarios';
+import './Results.css';
 
 export default function Quiz({setCurrentPage, setScore}) {
     const [node, setNode] = useState(scenarios['start']);
@@ -33,7 +34,7 @@ export default function Quiz({setCurrentPage, setScore}) {
         {/* TOP ROW: your question text */}
         <Row className="justify-content-center mt-4">
           <Col xs={12} md={10} lg={8}>
-            <Card className="bg-dark bg-opacity-25 border-0 text-white">
+            <Card className="bg-dark bg-opacity-25 text-white jrpg-panel">
               <Card.Body className="text-center">
                 <Card.Text className="fs-7">
                   {node.text}
@@ -49,9 +50,9 @@ export default function Quiz({setCurrentPage, setScore}) {
             {node.choices.map(c => (
               <Button
                 key={c.label}
-                variant="primary"
+                // variant="primary"
                 size="sm"
-                className="bg-dark bg-opacity-75 border-0 text-white"
+                className="bg-dark bg-opacity-75 text-white jrpg-panel"
                 onClick={() => handleChoice(c)}
               >
                 {c.label}

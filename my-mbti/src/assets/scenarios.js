@@ -14,7 +14,7 @@ export const scenarios = {
   startA: {
     id: 'startA',
     bg: '/firstDichotomy/party_blob.png',
-    text: "Thinking back, you remember escaping from the partyby",
+    text: "Thinking back, you remember escaping from the party by",
     dichotomy: 0,
     choices: [
       { label: "Pretending to use the bathroom and hopping out the window", next: 'startA1', score: 1},

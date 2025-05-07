@@ -86,7 +86,7 @@ export default function ResultPage({score}) {
           {/* Most Compatible */}
           <Col xs={6} md={6} className="px-1 h-80">
             <Card className="h-80 shadow-sm jrpg-panel">
-              <Card.Header className="text-center small bg-success text-white py-1">Purrrrfect Partners</Card.Header>
+              <Card.Header className="text-center small text-white py-1" style={{ backgroundColor: '#4e79a7' }}>Purrrrfect Partners</Card.Header>
               <Card.Body className="d-flex flex-row flex-wrap justify-content-center align-items-center">
                 {compatible.map(person => {
                   const purrPerson = personalities[person];               
@@ -106,7 +106,7 @@ export default function ResultPage({score}) {
           {/* Least Compatible */}
           <Col xs={6} md={6} className="px-1 h-80">
             <Card className="h-80 shadow-sm jrpg-panel">
-              <Card.Header className="text-center small bg-danger text-white py-1">Clawful Adversaries</Card.Header>
+              <Card.Header className="text-center small text-white py-1" style={{ backgroundColor: '#f28e2c' }}>Clawful Adversaries</Card.Header>
               <Card.Body className="d-flex flex-row flex-wrap justify-content-center align-items-center">
                 {incompatible.map(person => {
                   const clawPerson = personalities[person]; 

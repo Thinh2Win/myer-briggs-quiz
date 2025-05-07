@@ -20,7 +20,7 @@ export default function Quiz({setCurrentPage, setScore}) {
     return (
       <Container
         fluid
-        className="d-flex flex-column vw-100 vh-100 p-0"
+        className="jrpg-screen d-flex flex-column vw-100 vh-100 p-0"
         style={{
           backgroundColor: 'black',
           backgroundImage: `url(${node.bg})`,

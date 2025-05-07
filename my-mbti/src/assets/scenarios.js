@@ -401,7 +401,7 @@ Like, like, like JENNIE`,
   startJ1: {
     id: 'startJ1',
     bg: '/fourthDichotomy/fourthA/choiceA.png',
-    text: "You carefully sketch a detailed map of the labyrinth on a magical leaf, continuing to always stick left to avoid taking duplicate paths",
+    text: "You carefully sketch a detailed map of the labyrinth on a magical leaf, continuing to always stick left to avoid taking duplicate paths and eventually make it out",
     choices: [
       { label: "continue", next: 'end', score: 0},
     ]

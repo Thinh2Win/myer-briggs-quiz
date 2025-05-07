@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import StartContainer from './components/StartPage';
 import Quiz from './components/Quiz';
 import ResultPage from './components/ResultPage';
+import './App.css';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('start');

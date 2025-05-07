@@ -11,7 +11,7 @@ export const personalities = {
         desc: `Norwegian Forest cats are intelligent, self-reliant, and quietly poised. 
         As the Mastermind you are a strategic visionary, always plotting several moves ahead 
         as if life were a grand chess game. You get along best with imaginative planners and clash with unpredictable free spirits.`,
-        stats: ['Intelligence: 95', 'Wisdom: 90', 'Charisma: 65', 'Defense: 75'],
+        stats: ['Intellect: 95', 'Wisdom: 90', 'Charisma: 65', 'Defense: 75'],
     },
     INTP: {
         mybp: 'INTP',
@@ -24,7 +24,7 @@ export const personalities = {
         desc: `Sphynx cats are unconventional, brainy, and always poking into nooks and crannies. 
         As the Logician you are a quirky idea factory, forever tinkering, easy-going but fiercely logical. 
         You bond with fellow intellectual explorers and clash with those who are stern or overly emotional.`,
-        stats: ['Intelligence: 99', 'Wisdom: 85', 'Dexterity: 65', 'Luck: 50'],
+        stats: ['Intellect: 99', 'Wisdom: 85', 'Dexterity: 65', 'Luck: 50'],
     },
     ENTJ: {
         mybp: 'ENTJ',
@@ -38,7 +38,7 @@ export const personalities = {
         loves taking charge and turning big plans into reality. As the Commander, 
         you are a natural leader rallying others with confident logic and expect competence. 
         You bond best with quick thinkers and go-getters but clash with laid-back or sensitive souls.`,
-        stats: ['Charisma: 90', 'Intelligence: 90', 'Strength: 75', 'Initiative: 95'],
+        stats: ['Charisma: 90', 'Intellect: 90', 'Strength: 75', 'Initiative: 95'],
     },
     ENTP: {
         mybp: 'ENTP',
@@ -51,7 +51,7 @@ export const personalities = {
         desc: `Cheshire cats are clever, mischievous, and one step ahead in the game of curiosity. 
         As the Debater you are quick-witted charmers and born innovators, always ready to challenge ideas as the devils advocate. 
         You get along famously with those who enjoy witty banter and clash with more traditional or sensitive types.`,
-        stats: ['Charisma: 90', 'Intelligence: 90', 'Luck: 75', 'Crit Rate: 80'],
+        stats: ['Charisma: 90', 'Intellect: 90', 'Luck: 75', 'Crit Rate: 80'],
     },
     INFJ: {
         mybp: 'INFJ',
@@ -64,7 +64,7 @@ export const personalities = {
         desc: `Russian Blue cats are calm, watchful, and seemingly psychic about peoples moods. 
         As the Sage you are a compassionate visionary who intuitively understands people’s hopes and fears. 
         You form profound connections with those who share similar values and clash with aggressive or inconsiderate types.`,
-        stats: ['Charisma: 80', 'Intelligence: 85', 'Wisdom: 95', 'Mana: 75'],
+        stats: ['Charisma: 80', 'Intellect: 85', 'Wisdom: 95', 'Mana: 75'],
     },
     INFP: {
         mybp: 'INFP',
@@ -117,7 +117,7 @@ export const personalities = {
         desc: `British Shorthair cats are reserved, dignified, and no-nonsense, preferring routine and comfy order. 
         As the Inspector you are hard-working and dutiful, valuing tradition, facts, and a well-organized plan. 
         You bond with others who prove reliable and respectful and clash with those who are erratic or careless.`,
-        stats: ['Defense: 95', 'Intelligence: 80', 'Constitution: 90', 'Accuracy: 88'],
+        stats: ['Defense: 95', 'Intellect: 80', 'Constitution: 90', 'Accuracy: 88'],
     },
     ISFJ: {
         mybp: 'ISFJ',
@@ -131,7 +131,7 @@ export const personalities = {
         As the Guardian Angel you are a nurturing caregiver with a strong sense of responsibility.
         You tend to avoid arguments opting for harmony, prefering those who appreciate your warmth 
         and clashing with abrasive or overly analytical types.`,
-        stats: ['Constitution: 85', 'Intelligence: 90', 'Wisdom: 78', 'Charisma: 75'],
+        stats: ['Constitution: 85', 'Intellect: 90', 'Wisdom: 78', 'Charisma: 75'],
     },
     ESTJ: {
         mybp: 'ESTJ',
@@ -170,7 +170,7 @@ export const personalities = {
         desc: `Feral Alley cats are independent, stealthy, and street-smart, prowling solo and answering to no one.
         As the Virtuoso you are a cool-headed troubleshooter and adventure lover who moves through life with a daredevil twinkle in your eye. 
         You jive with those who respect independence and clash with micromanagers or drama bringers.`,
-        stats: ['Dex: 92', 'Intelligence: 78', 'Initiative: 80', 'Crit Rate: 99'],
+        stats: ['Dex: 92', 'Intellect: 78', 'Initiative: 80', 'Crit Rate: 99'],
     },
     ISFP: {
         mybp: 'ISFP',
@@ -209,6 +209,6 @@ export const personalities = {
         desc: `Siamese-mix cats or “party cats” are affectionate, loud, and the center of attention knocking stuff off your desk just because.
         As the Entertainer you live to spread joy as a vivacious performer who turns life into a party wherever they go. 
         You bond with people who share your energy and clash with those who dampen the mood.`,
-        stats: ['Charisma: 90', 'Intelligence: 90', 'Luck: 75', 'Crit Rate: 80'],
+        stats: ['Charisma: 90', 'Intellect: 90', 'Luck: 75', 'Crit Rate: 80'],
     },
 }

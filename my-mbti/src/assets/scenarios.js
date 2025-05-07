@@ -14,7 +14,7 @@ export const scenarios = {
   startA: {
     id: 'startA',
     bg: '/firstDichotomy/party_blob.png',
-    text: "Thinking back, you remember escaping by",
+    text: "Thinking back, you remember escaping from the partyby",
     dichotomy: 0,
     choices: [
       { label: "Pretending to use the bathroom and hopping out the window", next: 'startA1', score: 1},
@@ -79,7 +79,7 @@ export const scenarios = {
     id: 'startB3',
     bg: '/firstDichotomy/firstB/choiceC.png',
     text: `WHOOOO wanna rock with JENNIE? Keep your hair done, nails done, like JENNIE, Who else got 'em obsessed, like JENNIE?
-Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
+Like, like, like JENNIE`,
     choices: [
       { label: "Continue", next: 'isekai', score: 0},
     ]
@@ -115,7 +115,7 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
   startC3: {
     id: 'startC3',
     bg: '/firstDichotomy/firstC/choiceC.png',
-    text: "Grinning, you hand them to the nearest friends, then hook arms with Natalie, weaving through the crowd toward the concession stands to keep the party fueled for everyone",
+    text: "You hand the drinks off and both head toward the concession stands to keep the party fueled for everyone",
     choices: [
       { label: "Continue", next: 'isekai', score: 0},
     ]
@@ -132,7 +132,7 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
   secondDichotomy: {
     id: 'secondDichotomy',
     bg: '/secondDichotomy/kitty_stats.png',
-    text: "You awaken in another world as a kitty! Confused and jobless, you set out on a mission to find yourself!",
+    text: "You awaken in another world as a kitty! Confused and jobless, you go through a series of trials to find yourself!",
     choices: [
       { label: "continue", next: 'start2', score: 0},
     ]
@@ -140,10 +140,10 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
   start2: {
     id: 'start2',
     bg: '/secondDichotomy/library.png',
-    text: "You blink and find yourself in a crystal library of meowgic. Within towering glass shelves, enchanted tomes whisper of hidden realms and arcane lore. What do you do first?",
+    text: "You blink and find yourself within the first trial, a crystal library of meowgic. What do you do first?",
     dichotomy: 1,
     choices: [
-      { label: "You creep silently through the glowing crystal corridors, your whiskers tingling with magical energy as you carefully avoid the notice of busy wizard apprentices", next: 'startD', score: 1},
+      { label: "You creep silently through the corridors, carefully avoid the notice of busy wizard apprentices", next: 'startD', score: 1},
       { label: "You discover you can speak to the spirit animals of the crystal corridors, forming an unlikely friendship with a ghostly raven ", next: 'startE', score: 2},
       { label: "You snoop through the corridors and randomly touch things that strike your fancy", next: 'startF', score: 3},
       
@@ -155,7 +155,7 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
     text: "You accidentally knock over an entire steamer of dimsum while reaching for a dumpling, you forgot you don’t have thumbs!! Instinctively you",
     dichotomy: 1,
     choices: [
-      { label: "Flatten your ears from embarrassment and skedaddle, leaving behind sticky paw prints that smell faintly of shumai", next: 'startD1', score: 1},
+      { label: "Flatten your ears from embarrassment and skedaddle, leaving behind sticky paw prints", next: 'startD1', score: 1},
       { label: "Channel your embarrassment into an unexpected burst of feline magic!", next: 'startD2', score: 2},
       { label: "Perform an elaborate series of aerial somersaults collecting all the dumplings before they fall", next: 'startD3', score: 3},
     ]
@@ -259,7 +259,7 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
   thirdDichotomy: {
     id: 'thirdDichotomy',
     bg: '/thirdDichotomy/3Start.png',
-    text: "You blink and find yourself in the Chamber of Heart and Claw! A grand hall with a glowing ruby heart and guardians at its center. To obtain the heart you plan to",
+    text: "You blink and find yourself within the second trial, the Chamber of Heart and Claw! To obtain the glowing ruby heart you plan to",
     dichotomy: 2,
     choices: [
       { label: "Observe the guardians movements with calculated precision", next: 'startG', score: 1},
@@ -275,7 +275,7 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
     choices: [
       { label: "Wait patiently for the perfect window to snatch the ruby heart", next: 'startG1', score: 1},
       { label: "Attempt to charm and bond with the guardians", next: 'startG2', score: 2},
-      { label: "Decide to just abandon all strategic planning and simply walk straight toward the guardians to bargain", next: 'startG3', score: 3},
+      { label: "Decide to just abandon all strategic planning and try to bargain", next: 'startG3', score: 3},
     ]
   },
   startG1: {
@@ -289,7 +289,7 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
   startG2: {
     id: 'startG2',
     bg: '/thirdDichotomy/thirdA/choiceB.png',
-    text: "You notice one particularly fierce-looking guardian cat has whiskers that twitch when you hum the opening theme of One Piece, inspiring you to sing with confidence! The guardians back away slowly off screen",
+    text: "You notice one particularly fierce-looking guardian cat has whiskers that twitch when you hum the opening theme of One Piece, inspiring you to sing with confidence! The guardians back away slowly.",
     choices: [
       { label: "continue", next: 'fourthDichotomy', score: 0},
     ]
@@ -332,7 +332,7 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
   startH3: {
     id: 'startH3',
     bg: '/thirdDichotomy/thirdB/choiceC.png',
-    text: "The guardian experiences your memory of waiting hours to eat at a hyped restaurant just for the food to be mid. Tears form in the elder cat's eyes as they recognize a foolish kindred spirit",
+    text: "The guardian experiences your memory of waiting hours to eat at a overlypopular restaurant just for the food to be mid. Tears form in the elder cat's eyes as they recognize a foolish kindred spirit",
     choices: [
       { label: "continue", next: 'fourthDichotomy', score: 0},
     ]
@@ -381,9 +381,9 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
     text: "You blink and find yourself in the Garden of Shifting Paths! Winding hedges that form ever-changing walkways under floating lanterns. Your first instinct is to",
     dichotomy: 3,
     choices: [
-      { label: "Meticulously mark each turn with a glowing paw print, ensuring you'll never get lost in this maze", next: 'startJ', score: 1},
-      { label: "Observe. You notice the lantern spirits follow patterns and create a timetable for their movements, organizing them by color and brightness the same way you arrange your Omeowkase set", next: 'startK', score: 2},
-      { label: "Abandon any notion of finding the exit, instead choosing to leap joyfully from lantern to lantern, making friends with each spirit you meet and learning their stories and embracing the journey", next: 'startL', score: 3},
+      { label: "Mark each turn with a glowing paw print, ensuring you'll never get lost", next: 'startJ', score: 1},
+      { label: "Observe the lantern spirits behavior and characteristics and do as they do", next: 'startK', score: 2},
+      { label: "Abandon any notion of finding the exit, instead choosing to make friends with each spirit and embracing the journey", next: 'startL', score: 3},
     ]
   },
   startJ: {
@@ -425,7 +425,7 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
   startK: {
     id: 'startK',
     bg: '/fourthDichotomy/4B.png',
-    text: "It seems some lanterns are sporadic and seem to be tricking you; almost attempting to outsmart you. Changing your strategy you decide to",
+    text: "It seems some spirits are sporadic and seem to be tricking you; almost attempting to outsmart you. Changing your strategy you decide to",
     dichotomy: 3,
     choices: [
       { label: "Document each lantern spirit's behavior on a magical leaf scroll to find which are trustworthy", next: 'startK1', score: 1},
@@ -464,9 +464,9 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
     text: "After a 2 year time skip within the Garden of Shifting Paths, you wave good bye to the spirits you have grown so fond of and recall the events that led you here",
     dichotomy: 3,
     choices: [
-      { label: "You arrange selected spirits in a circle and conduct a formal tea ceremony serving spectral dimsum every day", next: 'startL1', score: 1},
+      { label: "You conducted a formal tea ceremony serving spectral dimsum every day", next: 'startL1', score: 1},
       { label: "Your competitive nature lead you to having fun competitions with spirits, going head to head on a day to day basis", next: 'startL2', score: 2},
-      { label: "You continue leaping from lantern to lantern with no particular destination, letting each spirit's story inspire your next move as flowers bloom beneath your paws", next: 'startL3', score: 3},
+      { label: "You continued through with no particular destination, letting each spirit's story inspire your next move", next: 'startL3', score: 3},
       
     ]
   },
@@ -497,7 +497,7 @@ Like, like, like (JENNIE, JENNIE, JENNIE, JENNIE)`,
   end: {
     id: 'end',
     bg: '/fourthDichotomy/evoKitty.png',
-    text: "You have reached the end of your grind! You have evolved into",
+    text: "You have finished the trials! The new world admins deem you to be ...",
     choices: [{label: "continue", next: '', score: 0, id: 'end'}] 
   }
 }

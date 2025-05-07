@@ -50,9 +50,9 @@ export default function Quiz({setCurrentPage, setScore}) {
             {node.choices.map(c => (
               <Button
                 key={c.label}
-                // variant="primary"
+                variant="primary"
                 size="sm"
-                className="bg-dark bg-opacity-75 text-white jrpg-panel"
+                className="bg-dark bg-opacity-75 text-white"
                 onClick={() => handleChoice(c)}
               >
                 {c.label}

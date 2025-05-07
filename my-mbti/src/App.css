@@ -4,3 +4,6 @@ html, body, #root {
   background-color: #123;
 }
 
+html {
+  font-size: clamp(0.5rem, 3vw, 2rem);
+}

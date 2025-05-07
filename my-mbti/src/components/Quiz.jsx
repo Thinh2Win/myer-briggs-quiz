@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container, Row, Col, Button, Card } from 'react-bootstrap';
+import { Container, Row, Col, Button, Card, Image } from 'react-bootstrap';
 import { scenarios } from '../assets/scenarios';
 import './Results.css';
 
@@ -21,38 +21,36 @@ export default function Quiz({setCurrentPage, setScore}) {
     return (
       <Container
         fluid
-        className="jrpg-screen d-flex flex-column vw-100 vh-100 p-0"
-        style={{
-          backgroundColor: 'black',
-          backgroundImage: `url(${node.bg})`,
-          backgroundSize:   'contain',
-          backgroundPosition: 'center',
-          backgroundRepeat:  'no-repeat',
-          overflow: 'hidden',
-        }}
+        className="jrpg-screen d-flex flex-column vh-100"
       >
         {/* TOP ROW: your question text */}
-        <Row className="justify-content-center mt-4">
-          <Col xs={12} md={10} lg={5}>
-            <Card className="bg-dark bg-opacity-75 text-white jrpg-panel">
+        <Row className="justify-content-center m-auto">
+          <Col xs={12}>
+            <Card className="bg-dark bg-opacity-10 text-white border-info">
               <Card.Body className="text-center">
-                <Card.Text className="fs-7">
+                <Card.Text>
                   {node.text}
                 </Card.Text>
               </Card.Body>
             </Card>
           </Col>
         </Row>
+
+        <Row className="justify-content-center m-auto">
+          <Col xs={12}>
+            <Image src={`${node.bg}`} fluid style={{width: 'auto', maxHeight: '50vh'}}/>
+          </Col>
+        </Row>
       
         {/* PUSH the next row down */}
-        <Row className="mt-auto mb-4 justify-content-center">
-          <Col xs={12} md={10} lg={4} className="d-grid gap-3">
+        <Row className="m-auto justify-content-center">
+          <Col xs={12} className="d-grid gap-3">
             {node.choices.map(c => (
               <Button
                 key={c.label}
-                variant="primary"
+                variant="info"
                 size="sm"
-                className="bg-dark bg-opacity-75 text-white"
+                className="bg-dark bg-opacity-10 text-white"
                 onClick={() => handleChoice(c)}
               >
                 {c.label}

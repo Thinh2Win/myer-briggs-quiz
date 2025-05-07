@@ -25,7 +25,7 @@ export default function ResultPage({score}) {
 
     const {mybp, title, spriteUrl, compatible, incompatible, race, job, desc, stats} = type;
     return (
-        <Container fluid className="d-flex flex-column vh-100 overflow-hidden gap-2 jrpg-screen">
+        <Container fluid className="d-flex flex-column vh-100 gap-2 jrpg-screen">
         {/* Top section (~40%) */}
         <Row style={{ flex: '0 0 40%'}}>
           {/* Sprite Card */}

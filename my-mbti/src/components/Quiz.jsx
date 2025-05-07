@@ -33,8 +33,8 @@ export default function Quiz({setCurrentPage, setScore}) {
       >
         {/* TOP ROW: your question text */}
         <Row className="justify-content-center mt-4">
-          <Col xs={12} md={10} lg={8}>
-            <Card className="bg-dark bg-opacity-25 text-white jrpg-panel">
+          <Col xs={12} md={10} lg={5}>
+            <Card className="bg-dark bg-opacity-75 text-white jrpg-panel">
               <Card.Body className="text-center">
                 <Card.Text className="fs-7">
                   {node.text}
@@ -46,7 +46,7 @@ export default function Quiz({setCurrentPage, setScore}) {
       
         {/* PUSH the next row down */}
         <Row className="mt-auto mb-4 justify-content-center">
-          <Col xs={12} md={10} lg={8} className="d-grid gap-3">
+          <Col xs={12} md={10} lg={4} className="d-grid gap-3">
             {node.choices.map(c => (
               <Button
                 key={c.label}

@@ -117,7 +117,7 @@ export const personalities = {
         desc: `British Shorthair cats are reserved, dignified, and no-nonsense, preferring routine and comfy order. 
         As the Inspector you are hard-working and dutiful, valuing tradition, facts, and a well-organized plan. 
         You bond with others who prove reliable and respectful and clash with those who are erratic or careless.`,
-        stats: ['Defense: 95', 'Intellect: 80', 'Constitution: 90', 'Accuracy: 88'],
+        stats: ['Defense: 95', 'Intellect: 80', 'Resilience: 90', 'Accuracy: 88'],
     },
     ISFJ: {
         mybp: 'ISFJ',
@@ -131,7 +131,7 @@ export const personalities = {
         As the Guardian Angel you are a nurturing caregiver with a strong sense of responsibility.
         You tend to avoid arguments opting for harmony, prefering those who appreciate your warmth 
         and clashing with abrasive or overly analytical types.`,
-        stats: ['Constitution: 85', 'Intellect: 90', 'Wisdom: 78', 'Charisma: 75'],
+        stats: ['Resilience: 85', 'Intellect: 90', 'Wisdom: 78', 'Charisma: 75'],
     },
     ESTJ: {
         mybp: 'ESTJ',

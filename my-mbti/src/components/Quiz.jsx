@@ -1,4 +1,4 @@
-import { useMemo, useState, useCallback } from 'react';
+import { useMemo, useState, useCallback, useEffect, useRef } from 'react';
 import { Container, Row, Col, Button, Card, Image } from 'react-bootstrap';
 import { scenarios } from '../assets/scenarios';
 import './Results.css';
@@ -6,6 +6,12 @@ import './Results.css';
 export default function Quiz({setCurrentPage, setScore}) {
     const [node, setNode] = useState(scenarios['start']);
     const [stepCount, setStepCount] = useState(1);
+    const [isEntering, setIsEntering] = useState(true);
+    const [mascotAnim, setMascotAnim] = useState('bob');
+    const [mascotXY, setMascotXY] = useState({ x: 0, y: 0 });
+    const [selectedSegIndex, setSelectedSegIndex] = useState(null);
+    const wrapperRef = useRef(null);
+    const segRefs = useRef([]);
 
     const dichotomyLabel = useMemo(() => {
       if (typeof node.dichotomy !== 'number') return '—';
@@ -57,6 +63,47 @@ export default function Quiz({setCurrentPage, setScore}) {
     }, [node, isLikert]);
     // No keyboard navigation: mobile-first interactions
 
+    // Trigger scene entrance wipe when node changes
+    useEffect(() => {
+      setIsEntering(true);
+      const t = setTimeout(() => setIsEntering(false), 260);
+      return () => clearTimeout(t);
+    }, [node]);
+
+    const moveMascotToIndex = useCallback((index) => {
+      const container = wrapperRef.current;
+      const target = segRefs.current[index];
+      if (!container || !target) return;
+      const cRect = container.getBoundingClientRect();
+      const tRect = target.getBoundingClientRect();
+      const mascotWidth = 36;
+      const mascotHeight = 36;
+      const centerX = tRect.left + tRect.width / 2;
+      const bottomY = tRect.bottom;
+      const x = centerX - cRect.left - mascotWidth / 2;
+      const y = bottomY - cRect.top - mascotHeight / 2;
+      setMascotXY({ x, y });
+    }, []);
+
+    // Position mascot to middle segment initially for Likert bars, and remember selection
+    useEffect(() => {
+      if (!isLikert) return;
+      const center = Math.floor((orderedChoices.length - 1) / 2);
+      setSelectedSegIndex(center);
+      requestAnimationFrame(() => moveMascotToIndex(center));
+    }, [isLikert, orderedChoices.length, moveMascotToIndex]);
+
+    // Reposition mascot on resize/orientation change
+    useEffect(() => {
+      const onResize = () => {
+        if (!isLikert) return;
+        const idx = selectedSegIndex != null ? selectedSegIndex : Math.floor((orderedChoices.length - 1) / 2);
+        requestAnimationFrame(() => moveMascotToIndex(idx));
+      };
+      window.addEventListener('resize', onResize);
+      return () => window.removeEventListener('resize', onResize);
+    }, [isLikert, orderedChoices.length, selectedSegIndex, moveMascotToIndex]);
+
     return (
       <Container
         fluid
@@ -89,7 +136,7 @@ export default function Quiz({setCurrentPage, setScore}) {
 
         <Row className="justify-content-center m-auto">
           <Col xs={12}>
-            <div className="pixel-frame">
+            <div className={`pixel-frame scene-wipe ${isEntering ? 'entering' : ''}`}>
               <Image src={`/${node.bg}`} alt="Scene" fluid style={{width: 'auto', maxHeight: '50vh'}}/>
             </div>
           </Col>
@@ -99,10 +146,10 @@ export default function Quiz({setCurrentPage, setScore}) {
         <Row className="m-auto justify-content-center sticky-choices">
           <Col xs={12}>
             {isLikert ? (
-              <div className="likert-wrapper">
+              <div className="likert-wrapper position-relative" ref={wrapperRef}>
                 <div className="likert-legend monospace">Least likely ⟶ Most likely</div>
                 <div className="likert-bar">
-                  {orderedChoices.map((choice) => {
+                  {orderedChoices.map((choice, index) => {
                     const rank = parseRank(choice.label);
                     const rankClass = typeof rank === 'number' ? `rank-${rank}` : 'rank-x';
                     return (
@@ -111,12 +158,24 @@ export default function Quiz({setCurrentPage, setScore}) {
                         type="button"
                         className={`likert-segment ${rankClass}`}
                         aria-label={choice.label}
-                        onClick={() => handleChoice(choice)}
+                        ref={(el) => { segRefs.current[index] = el; }}
+                        onMouseEnter={() => moveMascotToIndex(index)}
+                        onTouchStart={() => moveMascotToIndex(index)}
+                        onClick={() => {
+                          setMascotAnim('jump');
+                          setSelectedSegIndex(index);
+                          moveMascotToIndex(index);
+                          handleChoice(choice);
+                          setTimeout(() => setMascotAnim('bob'), 420);
+                        }}
                       >
                         <span className="segment-number monospace">{getShortLabel(choice.label)}</span>
                       </button>
                     );
                   })}
+                </div>
+                <div className="mascot-holder" style={{ transform: `translate(${mascotXY.x}px, ${mascotXY.y}px)` }}>
+                  <div className={`mascot ${mascotAnim}`}></div>
                 </div>
               </div>
             ) : (

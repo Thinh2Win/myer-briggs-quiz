@@ -40,27 +40,9 @@ export default function Quiz({setCurrentPage, setScore}) {
       setStepCount(prev => prev + 1);
     }, [node, setCurrentPage, setScore]);
 
-    // Helpers for Likert ordering and compact labels
-    const parseRank = (label) => {
-      const match = /^\s*(\d+)/.exec(label || '');
-      return match ? parseInt(match[1], 10) : null;
-    };
-    const getShortLabel = (label) => {
-      const rank = parseRank(label);
-      return rank ? String(rank) : label;
-    };
-    const isLikert = useMemo(() => {
-      const ranks = (node?.choices || []).map(c => parseRank(c.label)).filter(v => typeof v === 'number');
-      return (node?.choices?.length ?? 0) >= 3 && ranks.length >= Math.max(3, Math.floor((node?.choices?.length ?? 0) * 0.6));
-    }, [node]);
-    const orderedChoices = useMemo(() => {
-      if (!isLikert) return node.choices;
-      const withRanks = node.choices.map(c => ({ c, r: parseRank(c.label) }));
-      // Sort by rank ascending (least → most); non-numeric sink to end in original order
-      const numeric = withRanks.filter(x => typeof x.r === 'number').sort((a,b) => (a.r||0) - (b.r||0));
-      const nonNumeric = withRanks.filter(x => x.r == null);
-      return [...numeric.map(x => x.c), ...nonNumeric.map(x => x.c)];
-    }, [node, isLikert]);
+    // Likert detection without labels: treat 5-choice nodes as Likert
+    const isLikert = useMemo(() => (node?.choices?.length ?? 0) === 5, [node]);
+    const choicesList = useMemo(() => node?.choices ?? [], [node]);
     // No keyboard navigation: mobile-first interactions
 
     // Trigger scene entrance wipe when node changes
@@ -88,21 +70,21 @@ export default function Quiz({setCurrentPage, setScore}) {
     // Position mascot to middle segment initially for Likert bars, and remember selection
     useEffect(() => {
       if (!isLikert) return;
-      const center = Math.floor((orderedChoices.length - 1) / 2);
+      const center = Math.floor((choicesList.length - 1) / 2);
       setSelectedSegIndex(center);
       requestAnimationFrame(() => moveMascotToIndex(center));
-    }, [isLikert, orderedChoices.length, moveMascotToIndex]);
+    }, [isLikert, choicesList.length, moveMascotToIndex]);
 
     // Reposition mascot on resize/orientation change
     useEffect(() => {
       const onResize = () => {
         if (!isLikert) return;
-        const idx = selectedSegIndex != null ? selectedSegIndex : Math.floor((orderedChoices.length - 1) / 2);
+        const idx = selectedSegIndex != null ? selectedSegIndex : Math.floor((choicesList.length - 1) / 2);
         requestAnimationFrame(() => moveMascotToIndex(idx));
       };
       window.addEventListener('resize', onResize);
       return () => window.removeEventListener('resize', onResize);
-    }, [isLikert, orderedChoices.length, selectedSegIndex, moveMascotToIndex]);
+    }, [isLikert, choicesList.length, selectedSegIndex, moveMascotToIndex]);
 
     return (
       <Container
@@ -149,15 +131,14 @@ export default function Quiz({setCurrentPage, setScore}) {
               <div className="likert-wrapper position-relative" ref={wrapperRef}>
                 <div className="likert-legend monospace">Least likely ⟶ Most likely</div>
                 <div className="likert-bar">
-                  {orderedChoices.map((choice, index) => {
-                    const rank = parseRank(choice.label);
-                    const rankClass = typeof rank === 'number' ? `rank-${rank}` : 'rank-x';
+                  {choicesList.map((choice, index) => {
+                    const rankClass = `rank-${index + 1}`;
                     return (
                       <button
-                        key={choice.label}
+                        key={`likert-${index}`}
                         type="button"
                         className={`likert-segment ${rankClass}`}
-                        aria-label={choice.label}
+                        aria-label={`Choice ${index + 1}`}
                         ref={(el) => { segRefs.current[index] = el; }}
                         onMouseEnter={() => moveMascotToIndex(index)}
                         onTouchStart={() => moveMascotToIndex(index)}
@@ -169,7 +150,7 @@ export default function Quiz({setCurrentPage, setScore}) {
                           setTimeout(() => setMascotAnim('bob'), 420);
                         }}
                       >
-                        <span className="segment-number monospace">{getShortLabel(choice.label)}</span>
+                        <span className="segment-number monospace">{index + 1}</span>
                       </button>
                     );
                   })}
@@ -180,16 +161,19 @@ export default function Quiz({setCurrentPage, setScore}) {
               </div>
             ) : (
               <div className="d-grid gap-3">
-                {orderedChoices.map((choice) => (
-                  <Button
-                    key={choice.label}
-                    variant="info"
-                    className="choice-button retro-choice-button"
-                    onClick={() => handleChoice(choice)}
-                  >
-                    <span className="choice-label">{choice.label}</span>
-                  </Button>
-                ))}
+                {choicesList.map((choice, idx) => {
+                  const lbl = choice.label ?? 'Continue ▶';
+                  return (
+                    <Button
+                      key={`choice-${idx}`}
+                      variant="info"
+                      className="choice-button retro-choice-button"
+                      onClick={() => handleChoice(choice)}
+                    >
+                      <span className="choice-label">{lbl}</span>
+                    </Button>
+                  );
+                })}
               </div>
             )}
           </Col>

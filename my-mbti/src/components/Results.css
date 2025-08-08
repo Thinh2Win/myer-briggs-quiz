@@ -1,4 +1,95 @@
-.jrpg-screen { background: #123; font-family: 'Press Start 2P', monospace; }
-.jrpg-panel { background: #222; border: 2px solid #e4c21a; border-radius: 4px; }
-.jrpg-panel-header { font-family: inherit; }
-.fact-panel, .fact-title { color: #ffd700; }
+/* Screen background and frame */
+.jrpg-screen {
+  background: transparent;
+  position: relative;
+  color: var(--color-text);
+}
+
+/* Neo-panel with glassy feel */
+.jrpg-panel {
+  background: var(--color-panel);
+  border: 1px solid rgba(65, 217, 255, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(8px) saturate(120%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), var(--glow);
+  color: var(--color-text);
+}
+
+.jrpg-panel .card-header,
+.jrpg-panel .card-title {
+  font-family: var(--font-display);
+  color: var(--color-text);
+  white-space: normal;
+  word-break: keep-all;         /* avoid breaking inside words */
+  overflow-wrap: normal;        /* wrap only at spaces */
+  hyphens: none;                /* no auto-hyphenation */
+  text-wrap: balance;           /* nicer multi-line wrapping when supported */
+}
+.jrpg-panel .card-text { color: var(--color-text); }
+
+.fact-title {
+  color: var(--color-accent);
+  text-shadow: 0 0 6px rgba(255, 226, 94, 0.45);
+  text-align: center;
+  line-height: 1.12;
+  font-size: clamp(0.85rem, 3vw, 1.2rem);
+  white-space: normal;
+  word-break: keep-all;         /* avoid breaking inside words */
+  overflow-wrap: normal;        /* wrap only at spaces */
+  hyphens: none;
+  text-wrap: balance;
+}
+
+@media (max-width: 420px) {
+  .fact-title { font-size: clamp(0.8rem, 4vw, 1rem); }
+}
+
+.monospace { font-family: var(--font-display); }
+
+/* Buttons */
+.start-button {
+  background: linear-gradient(180deg, var(--color-primary), #1aa9d1);
+  color: #07131f;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: var(--glow);
+}
+.start-button:hover { filter: brightness(1.08); }
+
+/* Choice buttons */
+.choice-button {
+  background: linear-gradient(180deg, rgba(12, 19, 42, 0.9), rgba(10, 15, 31, 0.9));
+  color: var(--color-text);
+  border: 1px solid rgba(65, 217, 255, 0.35);
+  border-radius: 10px;
+  box-shadow: 0 0 0 0 rgba(65, 217, 255, 0.45);
+  transition: transform 120ms ease, box-shadow 200ms ease, filter 120ms ease;
+}
+.choice-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: var(--glow);
+}
+
+/* Headers coloring for compatibility panels */
+.compatible-header { background: rgba(65, 217, 255, 0.18) !important; border-bottom: 1px solid rgba(65, 217, 255, 0.35); color: var(--color-text); }
+.incompatible-header { background: rgba(255, 142, 44, 0.18) !important; border-bottom: 1px solid rgba(255, 142, 44, 0.35); color: var(--color-text); }
+
+/* Description panel readability enhancements */
+.desc-card {
+  background: linear-gradient(180deg, rgba(12, 19, 42, 0.86), rgba(10, 15, 31, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.desc-body {
+  max-width: 64ch; /* comfortable line length */
+  margin: 0 auto;
+  padding: 1.1rem 1.2rem;
+}
+.desc-text {
+  text-align: left;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  color: var(--color-text);
+  opacity: 0.95;
+}

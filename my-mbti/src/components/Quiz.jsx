@@ -21,12 +21,12 @@ export default function Quiz({setCurrentPage, setScore}) {
     return (
       <Container
         fluid
-        className="jrpg-screen d-flex flex-column vh-100"
+        className="jrpg-screen d-flex flex-column vh-100 scanline"
       >
         {/* TOP ROW: your question text */}
         <Row className="justify-content-center m-auto">
           <Col xs={12}>
-            <Card className="bg-dark bg-opacity-10 text-white border-info">
+            <Card className="jrpg-panel">
               <Card.Body className="text-center">
                 <Card.Text>
                   {node.text}
@@ -50,7 +50,7 @@ export default function Quiz({setCurrentPage, setScore}) {
                 key={c.label}
                 variant="info"
                 size="sm"
-                className="bg-dark bg-opacity-10 text-white"
+                className="choice-button"
                 onClick={() => handleChoice(c)}
               >
                 {c.label}

@@ -32,7 +32,7 @@ export const scenarios = {
     choices: [{ label: 'continue', next: 'secondDichotomy', score: 0 }],
   },
 
-  /* <-------------------------------- 2nd Dichotomy (S vs N) --------------------------------> */
+  /* <-------------------------------- 2nd Dichotomy (Sensing vs iNtuition) --------------------------------> */
   secondDichotomy: {
     id: 'secondDichotomy',
     bg: 'library.png',
@@ -48,7 +48,7 @@ export const scenarios = {
     choices: makeLikertChoices('thirdDichotomy', LIKERT_SCORES_DESC),
   },
 
-  /* <-------------------------------- 3rd Dichotomy (T vs F) --------------------------------> */
+  /* <-------------------------------- 3rd Dichotomy (Thinking vs Feeling) --------------------------------> */
   thirdDichotomy: {
     id: 'thirdDichotomy',
     bg: '3Start.png',
@@ -64,7 +64,7 @@ export const scenarios = {
     choices: makeLikertChoices('fourthDichotomy', LIKERT_SCORES_DESC),
   },
 
-  /* <-------------------------------- 4th Dichotomy (J vs P) --------------------------------> */
+  /* <-------------------------------- 4th Dichotomy (Judging vs Perceiving) --------------------------------> */
   fourthDichotomy: {
     id: 'fourthDichotomy',
     bg: '4Start.png',

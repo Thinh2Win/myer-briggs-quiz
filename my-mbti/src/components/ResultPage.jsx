@@ -21,11 +21,11 @@ export default function ResultPage({score}) {
     useEffect(() => {
       const type = findType(score);
       setType(type);
-    }, [])
+    }, [score])
 
     const {mybp, title, spriteUrl, compatible, incompatible, race, job, desc, stats} = type;
     return (
-        <Container fluid className="d-flex flex-column vh-100 jrpg-screen">
+        <Container fluid className="d-flex flex-column vh-100 jrpg-screen scanline">
           <Row>
             {/* Sprite Card */}
             <Col xs={8} md={8} className="m-0 p-0 h-100">
@@ -45,21 +45,21 @@ export default function ResultPage({score}) {
               <Card className="flex-fill shadow-sm jrpg-panel">
                 <Card.Body className="d-flex flex-column justify-content-center align-items-center">
                   <Card.Title className="text-center mb-1 fact-title">{title}</Card.Title>
-                  <Card.Text className="text-center mb-0 text-white">{mybp}</Card.Text>
+                  <Card.Text className="text-center mb-0">{mybp}</Card.Text>
                 </Card.Body>
               </Card>
               <Card className="flex-fill shadow-sm jrpg-panel">
                 <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                  <Card.Title className="mb-0 fact-title">Race</Card.Title>
-                  <Card.Text className="mb-2 text-center text-white">{race}</Card.Text>
-                  <Card.Title className="mb-0 fact-title">Job Class</Card.Title>
-                  <Card.Text className="mb-0 text-center text-white">{job}</Card.Text>
+                  <Card.Title className="mb-0 fact-title text-center">Race</Card.Title>
+                  <Card.Text className="mb-2 text-center">{race}</Card.Text>
+                  <Card.Title className="mb-0 fact-title text-center">Job Class</Card.Title>
+                  <Card.Text className="mb-0 text-center">{job}</Card.Text>
                 </Card.Body>
               </Card>
               <Card className="flex-fill shadow-sm jrpg-panel">
                 <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                  <Card.Title className="mb-1 fact-title">Stats</Card.Title>
-                  {stats.map(stat => <Card.Text key={stat} className="mb-0 text-white">{stat}</Card.Text>)}                  
+                  <Card.Title className="mb-1 fact-title text-center">Stats</Card.Title>
+                  {stats.map(stat => <Card.Text key={stat} className="mb-0">{stat}</Card.Text>)}                  
                 </Card.Body>
               </Card>
             </Col>
@@ -67,9 +67,9 @@ export default function ResultPage({score}) {
         {/* Character description section*/}
         <Row >
           <Col xs={12} className="p-0">
-            <Card className="jrpg-panel">
-              <Card.Body className="d-flex flex-column">
-                <Card.Text className="text-center text-white">
+            <Card className="jrpg-panel desc-card">
+              <Card.Body className="d-flex flex-column desc-body">
+                <Card.Text className="desc-text">
                   {desc}
                 </Card.Text>
               </Card.Body>
@@ -82,7 +82,7 @@ export default function ResultPage({score}) {
           {/* Most Compatible */}
           <Col xs={6} md={6} className="p-0">
             <Card className="jrpg-panel h-100">
-              <Card.Header className="text-center text-white" style={{ backgroundColor: '#4e79a7' }}>Purrrrfect Partners</Card.Header>
+              <Card.Header className="text-center compatible-header">Purrrrfect Partners</Card.Header>
               <Card.Body className="d-flex flex-column justify-content-center align-items-center">
                 {compatible.map(person => {
                   const purrPerson = personalities[person];               
@@ -93,7 +93,7 @@ export default function ResultPage({score}) {
                       style={{ maxHeight: '10vh' }}
                       alt={purrPerson.mybp}
                     />
-                    <div className="mt-1 text-center fw-semibold text-white">{purrPerson.title}</div>
+                    <div className="mt-1 text-center fw-semibold">{purrPerson.title}</div>
                   </div>
                 })}
               </Card.Body>
@@ -102,7 +102,7 @@ export default function ResultPage({score}) {
           {/* Least Compatible */}
           <Col xs={6} md={6} className="p-0">
             <Card className="jrpg-panel h-100">
-              <Card.Header className="text-center text-white" style={{ backgroundColor: '#f28e2c' }}>Clawful Adversaries</Card.Header>
+              <Card.Header className="text-center incompatible-header">Clawful Adversaries</Card.Header>
               <Card.Body className="d-flex flex-column justify-content-center align-items-center">
                 {incompatible.map(person => {
                   const clawPerson = personalities[person]; 
@@ -113,7 +113,7 @@ export default function ResultPage({score}) {
                       style={{ maxHeight: '10vh'}}
                       alt={clawPerson.mybp}
                     />
-                    <div className="mt-1 text-center fw-semibold text-white">{clawPerson.title}</div>
+                    <div className="mt-1 text-center fw-semibold">{clawPerson.title}</div>
                   </div>
                 })}
               </Card.Body>

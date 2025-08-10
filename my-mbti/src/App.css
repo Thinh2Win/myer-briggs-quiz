@@ -1,9 +1,47 @@
+/* Global neon RPG theme */
+:root {
+  --font-display: 'Press Start 2P', monospace;
+  --font-ui: 'Orbitron', system-ui, sans-serif;
+  --color-bg: #0b1226;
+  --color-panel: rgba(12, 19, 42, 0.72);
+  --color-panel-solid: #121b36;
+  --color-primary: #41d9ff;
+  --color-secondary: #ff8bd3;
+  --color-accent: #ffe25e;
+  --color-success: #72ffa9;
+  --color-danger: #ff5e7a;
+  --color-text: #e6f0ff;
+  --glow: 0 0 12px rgba(65, 217, 255, 0.45), 0 0 28px rgba(65, 217, 255, 0.18);
+}
+
 html, body, #root {
   height: 100%;
   margin: 0;
-  background-color: #123;
+  color: var(--color-text);
+  background: radial-gradient(1200px 800px at 20% 10%, rgba(28, 64, 140, 0.35), transparent),
+              radial-gradient(1000px 700px at 90% 20%, rgba(218, 58, 104, 0.25), transparent),
+              linear-gradient(180deg, #0a0f1f 0%, #0b1226 60%, #060913 100%);
 }
 
-html {
-  font-size: clamp(0.5rem, 3vw, 2rem);
+html { font-size: clamp(12px, 2.2vw, 18px); }
+
+body { font-family: var(--font-ui); }
+
+/* Ensure Bootstrap cards and general text default to light color */
+.card, .card *:not(.btn) { color: var(--color-text); }
+
+/* Decorative scanlines overlay for subtle CRT feel */
+.scanline::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.02) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  mix-blend-mode: overlay;
 }
